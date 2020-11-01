@@ -5,6 +5,7 @@ import axios from 'axios';
 import { USER_SERVER } from '../../../Config';
 import { withRouter } from 'react-router-dom';
 import { useSelector } from "react-redux";
+import MenuItem from 'antd/lib/menu/MenuItem';
 
 function RightMenu(props) {
   const user = useSelector(state => state.user)
@@ -35,6 +36,9 @@ function RightMenu(props) {
       <Menu mode={props.mode}>
         <Menu.Item key="logout">
           <a onClick={logoutHandler}>Logout</a>
+        </Menu.Item>
+        <Menu.Item key="upload">
+          <a href="/product/upload">Upload</a>
         </Menu.Item>
       </Menu>
     )
